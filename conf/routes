@@ -4,7 +4,6 @@
 
 # Home page
 GET     /                           controllers.Application.index
-GET     /user                       controllers.Application.saka
 GET     /echo                       controllers.Application.echo
 GET     /notimple                   controllers.Application.notImple
 
