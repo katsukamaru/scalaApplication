@@ -10,7 +10,7 @@ object Application extends Controller {
     ConnectionPool.singleton("jdbc:h2:tcp://localhost:32769/test", "sa", "")
     DB readOnly { implicit session =>
       val entities: List[Map[String, Any]] = sql"select * from tutorials_tbl".map(_.toMap).list.apply()
-      entities.foreach(println(_))
+      entities.foreach(x => println(x("ID"),x("TITLE")))
     }
     Ok(views.html.index("Your new application is ready."))
   }
